@@ -13,6 +13,22 @@ local ftable = {}
 
                     set_table = function(self, _table)
                         self._table = _table
+                    end,
+
+                    map = function(self, _callback)
+
+                    end,
+
+                    filter = function(self, _callback)
+                        local filter_table = {}
+
+                        for i=1, #self._table do
+                            if _callback(_table[i]) then
+                                table.insert(filter_table, _table[i])
+                            end
+                        end
+
+                        return filter_table
                     end
                 }
             }
