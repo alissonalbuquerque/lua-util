@@ -1,6 +1,28 @@
 
 local ftable = {}
 
+    function ftable.array(_table)
+        
+        local class_array = setmetatable(
+            {_table},
+            {__index = 
+                {
+                    get_table = function(self)
+                        return self._table
+                    end,
+
+                    set_table = function(self, _table)
+                        self._table = _table
+                    end
+                }
+            }
+        )
+
+        class_array._table = _table or nil
+
+        return class_array
+    end
+
     function ftable.map(_table, _callback)
 
         local map_table = {}
@@ -26,7 +48,5 @@ local ftable = {}
 
         return filter_table
     end
-
-    
 
 return ftable
