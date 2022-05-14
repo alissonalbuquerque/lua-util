@@ -8,3 +8,8 @@ O import das bibliotecas é feito de maneira isolada por módulos separados em a
 local module = require('lua-util.module')
 ```
 
+```
+local lu_arrays = require(lua-util.arrays)
+```
+<!-- Versão de desenvolvimento: -->
+<!-- Lua 5.3.5 -->
