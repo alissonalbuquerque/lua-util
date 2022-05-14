@@ -1,6 +1,10 @@
 
 local ftable = {}
 
+    ftable.hw = function()
+        print('Hello World')
+    end
+
     ftable.filter = function(_array, _callback)
 
         local new_array = {}
